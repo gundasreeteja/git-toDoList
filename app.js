@@ -10,6 +10,7 @@ app.use(express.static("public"));
 const items = [];
 const workItems = [];
 
+// Regular to do list
 app.get("/", function (req, res) {
   const day = date.getTodayDate();
   res.render("list", { listTitle: day, newItems: items });
@@ -26,6 +27,7 @@ app.post("/", function (req, res) {
   }
 });
 
+// Work to do list
 app.get("/work", function (req, res) {
   res.render("list", { listTitle: "Work List", newItems: workItems });
 });
